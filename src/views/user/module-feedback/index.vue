@@ -5,9 +5,9 @@
 </van-cell-group>
 <van-cell-group title="反馈内容">
 
-  <van-field v-model="content" 
+  <van-field v-model="content"
     clearable autosize center
-    placeholder="对我们网站、商品、服务，你还有什么建议吗？你还希望在商城上买到什么？请告诉我们..." 
+    placeholder="对我们网站、求助、服务，你还有什么建议吗？你还希望在商城上买到什么？请告诉我们..."
     type="textarea"
     rows="10"
     size="large"
@@ -38,7 +38,7 @@ export default {
       mobile: '',
       content: '',
       showList: false,
-      types:['商品相关', '功能异常', '优化建议', '其他'],
+      types:['求助相关', '功能异常', '优化建议', '其他'],
       type: ''
     };
   },
@@ -61,7 +61,7 @@ export default {
       if(this.content === ''){
         this.$toast("请输入反馈内容");
         return;
-      }      
+      }
       feedbackAdd({ mobile: this.mobile, feedType: this.type, content: this.content}).then(res => {
         this.$toast("感谢您的宝贵意见！");
         this.$router.go(-1);

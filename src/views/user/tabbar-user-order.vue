@@ -1,8 +1,8 @@
 <template>
   <div>
     <van-cell-group>
-      <van-cell title="我的订单" isLink>
-        <router-link to="/user/order/list/0" class="text-desc">全部订单</router-link>
+      <van-cell title="我的揭榜单" isLink>
+        <router-link to="/user/order/list/0" class="text-desc">全部揭榜单</router-link>
       </van-cell>
     </van-cell-group>
     <van-row class="order_status">
@@ -10,19 +10,19 @@
         <div class="order_status_icon" @click="$router.push({path: '/user/order/list/1'})">
           <van-icon name="daifukuan" :info="order.unpaid > 0 ? order.unpaid : ''"/>
         </div>
-        <div>待付款</div>
+        <div>待援助</div>
       </van-col>
       <van-col span="6">
         <div class="order_status_icon" @click="$router.push({path: '/user/order/list/2'})">
           <van-icon name="daifahuo" :info="order.unship > 0 ? order.unship : ''"/>
         </div>
-        <div>待发货</div>
+        <div>待到达</div>
       </van-col>
       <van-col span="6">
         <div class="order_status_icon" @click="$router.push({path: '/user/order/list/3'})">
           <van-icon name="wuliu" :info="order.unrecv > 0 ? order.unrecv : ''"/>
         </div>
-        <div>待收货</div>
+        <div>待求援</div>
       </van-col>
       <van-col span="6">
         <div class="order_status_icon" @click="$router.push({path: '/user/order/list/4'})">

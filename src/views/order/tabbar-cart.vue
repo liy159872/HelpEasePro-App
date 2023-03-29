@@ -26,7 +26,7 @@
       </div>
     </van-checkbox-group>
 
-    <is-empty v-if="!goods.length">您的购物车空空如也~</is-empty>
+    <is-empty v-if="!goods.length">您的Help空空如也~<br>快去首页选取你想帮助的人和事吧~</is-empty>
 
     <van-submit-bar
       style="bottom: 50px"
@@ -126,7 +126,7 @@ export default {
       if (this.isEditor) {
         this.$dialog
           .confirm({
-            message: '确定删除所选商品吗?',
+            message: '确定删除所选求助吗?',
             cancelButtonText: '再想想'
           })
           .then(() => {
@@ -148,7 +148,7 @@ export default {
     deleteCart(o) {
       let productId = this.goods[o].productId;
       this.$dialog
-        .confirm({ message: '确定删除所选商品吗', cancelButtonText: '再想想' })
+        .confirm({ message: '确定删除所选求助吗', cancelButtonText: '再想想' })
         .then(() => {
           this.$nextTick(() => {
             this.deleteNext(productId);

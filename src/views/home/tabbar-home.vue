@@ -1,7 +1,7 @@
 <template>
   <div class="tab_home">
     <div class="tal_class_searchBox">
-      <van-search placeholder="点击前往搜索"
+      <van-search placeholder="HelpEasePro搜索"
                   @click="$router.push({ name: 'search' })" />
       <div class="tal_class_searchMask"></div>
     </div>
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <van-panel title="优惠券"
+    <van-panel title="互助外快"
                style=" padding-bottom: 10px;">
       <div class="van-coupon-item"
            v-for="(coupon,index) in shopInfos.couponList"
@@ -73,10 +73,10 @@
       </van-card>
       <div slot='header'>
         <van-cell-group>
-          <van-cell title="团购专区"
+          <van-cell title="团互援"
                     isLink>
             <router-link to="/items/groupon"
-                         class="text-desc">更多团购商品</router-link>
+                         class="text-desc">更多团互援求助</router-link>
           </van-cell>
         </van-cell-group>
       </div>
@@ -96,10 +96,10 @@
       </van-grid>
       <div slot='header'>
         <van-cell-group>
-          <van-cell title="品牌商直供"
+          <van-cell title="求援生活"
                     isLink>
             <router-link to="/items/brand-list"
-                         class="text-desc">更多品牌商</router-link>
+                         class="text-desc">更多求援生活</router-link>
           </van-cell>
         </van-cell-group>
       </div>
@@ -120,10 +120,10 @@
       </van-row>
       <div slot='header'>
         <van-cell-group>
-          <van-cell title="新品首发"
+          <van-cell title="最新求援"
                     isLink>
             <router-link to="/items/new"
-                         class="text-desc">更多新品首发</router-link>
+                         class="text-desc">更多最新求援</router-link>
           </van-cell>
         </van-cell-group>
       </div>
@@ -143,10 +143,10 @@
       </van-card>
       <div slot='header'>
         <van-cell-group>
-          <van-cell title="人气推荐"
+          <van-cell title="能力榜荐"
                     isLink>
             <router-link to="/items/hot"
-                         class="text-desc">更多人气推荐</router-link>
+                         class="text-desc">更多能力榜荐</router-link>
           </van-cell>
         </van-cell-group>
       </div>
@@ -225,7 +225,7 @@ export default {
     },
     goTopic(id) {
       return `#/items/topic/${id}`;
-    },    
+    },
     getCoupon(id) {
       couponReceive({ couponId: id }).then(res => {
         Toast.success('领取成功');

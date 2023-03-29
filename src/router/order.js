@@ -7,11 +7,11 @@ export default [
     meta: {
       login: true,
       showHeader:false,
-      title:"购物车"
+      title:"Help"
     },
-    components: { 
-      default: () => import('@/views/order/tabbar-cart'), 
-      tabbar: Tabbar 
+    components: {
+      default: () => import('@/views/order/tabbar-cart'),
+      tabbar: Tabbar
     }
   },
   {

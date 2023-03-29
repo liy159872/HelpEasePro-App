@@ -10,10 +10,10 @@
                 :thumb="item.picUrl"></van-card>
 
       <van-cell-group>
-        <van-cell title="商品金额">
+        <van-cell title="求助金额">
           <span class="red">{{orderInfo.goodsPrice * 100 | yuan}}</span>
         </van-cell>
-        <van-cell title="快递费用">
+        <van-cell title="跑腿费用">
           <span class="red">{{orderInfo.freightPrice * 100 | yuan}}</span>
         </van-cell>
       </van-cell-group>
@@ -29,40 +29,40 @@
       <van-cell title="下单时间">
         <span>{{orderInfo.addTime }}</span>
       </van-cell>
-      <van-cell title="订单编号">
+      <van-cell title="揭榜单编号">
         <span>{{orderInfo.orderSn }}</span>
       </van-cell>
-      <van-cell title="订单备注">
+      <van-cell title="揭榜单备注">
         <span>{{orderInfo.remark }}</span>
       </van-cell>
 
-      <van-cell title="实付款：">
+      <van-cell title="实援助：">
         <span class="red">{{orderInfo.actualPrice * 100 | yuan}}</span>
       </van-cell>
-      <!-- 订单动作 -->
+      <!-- 揭榜单动作 -->
       <van-cell>
         <van-button size="small"
                     v-if="handleOption.cancel"
                     @click="cancelOrder(orderInfo.id)"
                     style=" float:right"
                     round
-                    type="danger">取消订单</van-button>
+                    type="danger">取消揭榜</van-button>
         <van-button size="small"
                     v-if="handleOption.pay"
                     @click="payOrder(orderInfo.id)"
                     style=" float:right"
                     round
-                    type="danger">去支付</van-button>
+                    type="danger">去援助</van-button>
         <van-button size="small"
                     v-if="handleOption.delete"
                     @click="deleteOrder(orderInfo.id)"
                     style=" float:right"
-                    type="danger">删除订单</van-button>
+                    type="danger">删除揭榜单</van-button>
         <van-button size="small"
                     v-if="handleOption.confirm"
                     @click="confirmOrder(orderInfo.id)"
                     style=" float:right"
-                    type="danger">确认收货</van-button>
+                    type="danger">确认求援</van-button>
         <van-button size="small"
                     v-if="handleOption.refund"
                     @click="refundOrder(orderInfo.id)"
@@ -73,10 +73,10 @@
 
     <van-cell-group v-if="showExp()"
                     style="margin-top: 20px;">
-      <van-cell title="快递公司">
+      <van-cell title="跑腿方式">
         <span>{{orderInfo.expCode }}</span>
       </van-cell>
-      <van-cell title="快递编号">
+      <van-cell title="跑腿编号">
         <span>{{orderInfo.expNo }}</span>
       </van-cell>
     </van-cell-group>
@@ -116,10 +116,10 @@ export default {
     deleteOrder(id) {
       let that = this;
       this.$dialog
-        .confirm({ message: '确定要删除该订单吗?' })
+        .confirm({ message: '确定要删除该揭榜单吗?' })
         .then(() => {
           orderDelete({ orderId: id }).then(() => {
-            this.$toast('已删除订单');
+            this.$toast('已删除揭榜单');
             this.$router.go(-1);
           });
         })
@@ -127,11 +127,11 @@ export default {
     },
     cancelOrder(id) {
       this.$dialog
-        .confirm({ message: '确定要取消该订单吗?' })
+        .confirm({ message: '确定要取消该揭榜单吗?' })
         .then(() => {
           orderDelete({ orderId: id }).then(() => {
             this.init();
-            this.$toast('已取消该订单');
+            this.$toast('已取消该揭榜单');
           });
         })
         .catch(() => {});
@@ -139,12 +139,12 @@ export default {
     confirmOrder(id) {
       this.$dialog
         .confirm({
-          message: '请确认收到货物, 确认收货后无法撤销!'
+          message: '请确认收到货物, 确认求援后无法撤销!'
         })
         .then(() => {
           orderConfirm({ orderId: id }).then(() => {
             this.init();
-            this.$toast('已确认收货');
+            this.$toast('已确认求援');
           });
         })
         .catch(() => {});
@@ -155,7 +155,7 @@ export default {
         .then(() => {
           orderRefund({ orderId: id }).then(() => {
             this.init();
-            this.$toast('已申请订单退款');
+            this.$toast('已申请揭榜单退款');
           });
         })
         .catch(() => {});

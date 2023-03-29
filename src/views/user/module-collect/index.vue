@@ -21,7 +21,7 @@
       </van-card>
     </van-list>
 
-    <is-empty v-if="list.length === 0">没有商品收藏</is-empty>
+    <is-empty v-if="list.length === 0">没有求助收藏</is-empty>
 
   </div>
 </template>
@@ -64,7 +64,7 @@ export default {
       });
     },
     cancelCollect(event, i, item) {
-      this.$dialog.confirm({ message: '是否取消收藏该商品' }).then(() => {
+      this.$dialog.confirm({ message: '是否取消收藏该求助' }).then(() => {
         collectAddOrDelete({ valueId: item.valueId, type: 0 }).then(res => {
           this.list.splice(i, 1);
         });

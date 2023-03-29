@@ -38,11 +38,15 @@
         </div>
       </div>
 
-      <van-button size="large" type="danger" :loading="isLogining" @click="loginSubmit">登录</van-button>
+      <van-button style="background-color: #04a3e2" size="large" type="danger" :loading="isLogining" @click="loginSubmit">登录</van-button>
     </md-field-group>
 
+    <div align="center">
+      <img  width="80%"  src="https://www.hualigs.cn/image/641fdd4dac243.jpg" /><br>
+    </div>
 
-      <div class="text-desc text-center bottom_positon">技术支持: HelpEasePro</div>
+
+      <div class="text-desc text-center bottom_positon">@HelpEasePro 关于我们 使用条款 帮助文档 在线自助服务 激活</div>
 
 	</div>
 </template>

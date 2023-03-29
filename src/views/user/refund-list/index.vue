@@ -11,7 +11,7 @@
             v-for="(el, i) in tab.items"
             class="order_list--panel"
             :key="i"
-            :title="'订单编号: ' + el.id"
+            :title="'揭榜单编号: ' + el.id"
             :status="getStatusText(el.status)"
           >
             <div>

@@ -25,7 +25,7 @@ export default [
       keepAlive: true,
       login: true,
       showHeader:false,
-      title:"购物车"
+      title:"Help"
     },
     components: { default: tab_user, tabbar: Tabbar }
   },
@@ -68,7 +68,7 @@ export default [
     path: '/user/feedback',
     name: 'user-feedback',
     component: UserFeedback
-  },  
+  },
   {
     path: '/user/information',
     name: 'user-information',

@@ -6,12 +6,12 @@
     </div>
 
     <div class="status_text" v-if="isSuccess">
-      <span class="red">3秒</span>跳转订单
+      <span class="red">3秒</span>跳转揭榜单
     </div>
-    <div class="status_text" v-else>系统繁忙, 支付遇到问题, 请您稍后再试!</div>
+    <div class="status_text" v-else>系统繁忙, 援助遇到问题, 请您稍后再试!</div>
 
     <div class="status_goLink">
-      <router-link class="red" :to="{name: 'user'}">查看订单
+      <router-link class="red" :to="{name: 'user'}">查看揭榜单
         <van-icon name="arrow"/>
       </router-link>
     </div>
@@ -38,7 +38,7 @@ export default {
 
   computed: {
     statusText() {
-      return this.isSuccess ? '支付成功' : '支付失败';
+      return this.isSuccess ? '援助成功' : '援助失败';
     },
     statusIcon() {
       return this.isSuccess ? 'checked' : 'fail';

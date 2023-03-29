@@ -70,7 +70,7 @@ span.van-radio__input, span.van-radio__label{
 	color: $red;
 }
 
-//商品卡片
+//求助卡片
 .van-card__footer {
 	width: 100%;
 	padding-left: 130px;
@@ -83,7 +83,7 @@ div.van-card {
 }
 
 div.van-card__footer {
-	font-size: 12px;	
+	font-size: 12px;
 	color: $font-color-gray;
 }
 
@@ -92,7 +92,7 @@ div.van-card__footer {
 	vertical-align: middle;
 }
 
-//商品详情
+//求助详情
 .item_detail .van-picker__cancel {
 	color: #000;
 }
@@ -101,7 +101,7 @@ div.van-card__footer {
 	color: $red;
 }
 
-//购物车
+//Help
 .tab-cart > .card-goods .van-checkbox {
 	padding-left: 10px;
 	box-sizing: border-box;
@@ -121,7 +121,7 @@ div.van-card__footer {
 	text-align: right
 }
 
-//商品列表
+//求助列表
 .item_list .van-tab--disabled{
 	color: #000;
 }

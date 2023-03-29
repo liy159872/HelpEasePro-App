@@ -1,7 +1,7 @@
 <template>
   <div class="goods_new">
     <div class="banner">
-      <div class="title">新品首发</div>
+      <div class="title">最新求援</div>
     </div>
 
     <van-list v-model="loading"

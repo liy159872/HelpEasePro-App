@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<van-cell-group>
-			<van-cell title="我的优惠券" isLink>
-				<router-link to="/user/coupon/list/0" class="text-desc">全部优惠券</router-link>
+			<van-cell title="我的互助外快" isLink>
+				<router-link to="/user/coupon/list/0" class="text-desc">全部互助外快</router-link>
 			</van-cell>
 		</van-cell-group>
 

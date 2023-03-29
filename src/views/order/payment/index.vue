@@ -3,18 +3,18 @@
     <div class="time_down payment_group">
       请在
       <span class="red">半小时内</span>
-      完成付款，否则系统自动取消订单
+      完成援助，否则系统自动取消揭榜
     </div>
 
     <van-cell-group class="payment_group">
-      <van-cell title="订单编号" :value="order.orderInfo.orderSn"/>
-      <van-cell title="实付金额">
+      <van-cell title="揭榜单编号" :value="order.orderInfo.orderSn"/>
+      <van-cell title="实援助金额">
         <span class="red">{{order.orderInfo.actualPrice *100 | yuan}}</span>
       </van-cell>
     </van-cell-group>
 
     <div class="pay_way_group">
-      <div class="pay_way_title">选择支付方式</div>
+      <div class="pay_way_title">选择援助方式</div>
       <van-radio-group v-model="payWay">
         <van-cell-group>
           <van-cell>
@@ -26,14 +26,14 @@
           <van-cell>
             <template slot="title">
               <img src="../../../assets/images/wx_pay.png" alt="微信支付" width="113" height="23">
-            </template>            
+            </template>
             <van-radio name="wx"/>
           </van-cell>
         </van-cell-group>
       </van-radio-group>
     </div>
 
-    <van-button class="pay_submit" @click="pay" type="primary" bottomAction>去支付</van-button>
+    <van-button class="pay_submit" @click="pay" type="primary" bottomAction>去援助</van-button>
   </div>
 </template>
 
@@ -69,7 +69,7 @@ export default {
       });
     },
     pay() {
-      
+
       Dialog.alert({
         message: '你选择了' + (this.payWay === 'wx' ? '微信支付' : '支付宝支付')
       }).then(() => {

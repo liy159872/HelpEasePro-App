@@ -1,7 +1,7 @@
 <template>
 	<div class="is_empty">
 		<div>
-			<img src="../../assets/images/is_empty.png" alt="无商品" width="20%">
+			<img src="../../assets/images/is_empty.png" alt="无求助" width="20%">
 		</div>
 		<div>
 			<slot></slot>

@@ -13,7 +13,7 @@
                   @load="getOrderList">
           <van-panel v-for="(el, i) in orderList"
                      :key="i"
-                     :title="'订单编号: ' + el.orderSn"
+                     :title="'揭榜单编号: ' + el.orderSn"
                      :status="el.orderStatusText"
                      @click.native="toOrderDetail(el.id)">
             <van-card v-for="(goods, goodsI) in el.goodsList"
@@ -38,11 +38,11 @@
                  class="footer_btn">
               <van-button size="small"
                           v-if="el.handleOption.cancel"
-                          @click.stop="cancelOrder(el.id)">取消订单</van-button>
+                          @click.stop="cancelOrder(el.id)">取消揭榜</van-button>
               <van-button size="small"
                           v-if="el.handleOption.pay"
                           type="danger"
-                          @click.stop="toPay(el.id)">去支付</van-button>
+                          @click.stop="toPay(el.id)">去援助</van-button>
               <van-button size="small"
                           v-if="el.handleOption.refund"
                           type="danger"
@@ -50,10 +50,10 @@
               <van-button size="small"
                           v-if="el.handleOption.confirm"
                           type="danger"
-                          @click.stop="confirmOrder(el.id)">确认收货</van-button>
+                          @click.stop="confirmOrder(el.id)">确认求援</van-button>
               <van-button size="small"
                           v-if="el.handleOption.delete"
-                          @click.stop="delOrder(el.id)">删除订单</van-button>
+                          @click.stop="delOrder(el.id)">删除揭榜单</van-button>
               <van-button size="small"
                           v-if="el.handleOption.comment"
                           @click.stop="commentOrder(el.id)">去评价</van-button>
@@ -88,7 +88,7 @@ export default {
   data() {
     return {
       activeIndex: Number(this.active),
-      tabTitles: ['全部', '待付款', '待发货', '待收货', '待评价'],
+      tabTitles: ['全部', '待援助', '待到达', '待求援', '待评价'],
       orderList: [],
       page: 0,
       limit: 10,
@@ -118,22 +118,22 @@ export default {
     delOrder(id) {
       let that = this;
       this.$dialog
-        .confirm({ message: '确定要删除该订单吗?' })
+        .confirm({ message: '确定要删除该揭榜单吗?' })
         .then(() => {
           orderDelete({ orderId: id }).then(() => {
             this.init();
-            this.$toast('已删除订单');
+            this.$toast('已删除揭榜单');
           });
         })
         .catch(() => {});
     },
     cancelOrder(id) {
       this.$dialog
-        .confirm({ message: '确定要取消该订单吗?' })
+        .confirm({ message: '确定要取消该揭榜单吗?' })
         .then(() => {
           orderCancel({ orderId: id }).then(() => {
             this.init();
-            this.$toast('已取消该订单');
+            this.$toast('已取消该揭榜');
           });
         })
         .catch(() => {});
@@ -144,20 +144,20 @@ export default {
         .then(() => {
           orderRefund({ orderId: id }).then(() => {
             this.init();
-            this.$toast('已申请订单退款');
+            this.$toast('已申请揭榜单退款');
           });
         })
         .catch(() => {});
-    },    
+    },
     confirmOrder(id) {
       this.$dialog
         .confirm({
-          message: '请确认收到货物, 确认收货后无法撤销!'
+          message: '请确认收到货物, 确认求援后无法撤销!'
         })
         .then(() => {
           orderConfirm({ orderId: id }).then(() => {
             this.init();
-            this.$toast('已确认收货');
+            this.$toast('已确认求援');
           });
         })
         .catch(() => {});

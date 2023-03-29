@@ -1,5 +1,9 @@
 <template>
 	<md-field-group class="register_submit">
+    <div style="margin-top: -40px">
+      <img  width="10%"  src="https://www.hualigs.cn/image/641fdd4dac243.jpg" />
+      HelpEasePro期待你的加入~
+    </div>
 		<md-field v-model="code" icon="mobile" placeholder="请输入验证码">
 			<div slot="rightIcon" @click="getCode" class="getCode red">
 				<countdown v-if="counting" :time="60000" @end="countDownEnd">
@@ -13,9 +17,18 @@
 		<md-field v-model="repeatPassword" icon="lock" placeholder="请再次确认密码"/>
 
 		<div class="register_submit_btn">
-			<van-button type="danger" size="large" @click="registerSubmit">确定</van-button>
+			<van-button style="background-color: #04a3e2" type="danger" size="large" @click="registerSubmit">确定</van-button>
 		</div>
-	</md-field-group>
+
+    <div align="center">
+      <img  width="60%"  src="https://www.hualigs.cn/image/641fdd4dac243.jpg" /><br>
+    </div>
+
+
+    <div class="text-desc text-center bottom_positon">@HelpEasePro 关于我们 使用条款 帮助文档 在线自助服务 激活</div>
+
+
+  </md-field-group>
 </template>
 
 <script>

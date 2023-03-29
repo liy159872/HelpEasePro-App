@@ -91,14 +91,14 @@ export function authCaptcha(data) {
   })
 }
 
-const GoodsCount='/goods/count'; //统计商品总数
+const GoodsCount='/goods/count'; //统计求助总数
 export function goodsCount() {
   return request({
     url: GoodsCount,
     method: 'get'
   })
 }
-export const GoodsList='/goods/list'; //获得商品列表
+export const GoodsList='/goods/list'; //获得求助列表
 export function goodsList(query) {
   return request({
     url: GoodsList,
@@ -114,7 +114,7 @@ export function goodsCategory(query) {
     params: query
   })
 }
-const GoodsDetail='/goods/detail'; //获得商品的详情
+const GoodsDetail='/goods/detail'; //获得求助的详情
 export function goodsDetail(query) {
   return request({
     url: GoodsDetail,
@@ -122,9 +122,9 @@ export function goodsDetail(query) {
     params: query
   })
 }
-const GoodsRelated='/goods/related'; //商品详情页的关联商品（大家都在看）
+const GoodsRelated='/goods/related'; //求助详情页的关联求助（大家都在看）
 
-const BrandList='/brand/list'; //品牌列表
+const BrandList='/brand/list'; //互援列表
 export function brandList(query) {
   return request({
     url: BrandList,
@@ -132,7 +132,7 @@ export function brandList(query) {
     params: query
   })
 }
-const BrandDetail='/brand/detail'; //品牌详情
+const BrandDetail='/brand/detail'; //互援详情
 export function brandDetail(query) {
   return request({
     url: BrandDetail,
@@ -141,7 +141,7 @@ export function brandDetail(query) {
   })
 }
 
-const CartList='/cart/index'; //获取购物车的数据
+const CartList='/cart/index'; //获取Help的数据
 export function cartList(query) {
   return request({
     url: CartList,
@@ -149,7 +149,7 @@ export function cartList(query) {
     params: query
   })
 }
-const CartAdd='/cart/add'; // 添加商品到购物车
+const CartAdd='/cart/add'; // 添加求助到Help
 export function cartAdd(data) {
   return request({
     url: CartAdd,
@@ -157,7 +157,7 @@ export function cartAdd(data) {
     data
   })
 }
-const CartFastAdd='/cart/fastadd'; // 立即购买商品
+const CartFastAdd='/cart/fastadd'; // 立即揭榜求助
 export function cartFastAdd(data) {
   return request({
     url: CartFastAdd,
@@ -165,7 +165,7 @@ export function cartFastAdd(data) {
     data
   })
 }
-const CartUpdate='/cart/update'; // 更新购物车的商品
+const CartUpdate='/cart/update'; // 更新Help的求助
 export function cartUpdate(data) {
   return request({
     url: CartUpdate,
@@ -173,7 +173,7 @@ export function cartUpdate(data) {
     data
   })
 }
-const CartDelete='/cart/delete'; // 删除购物车的商品
+const CartDelete='/cart/delete'; // 删除Help的求助
 export function cartDelete(data) {
   return request({
     url: CartDelete,
@@ -181,7 +181,7 @@ export function cartDelete(data) {
     data
   })
 }
-const CartChecked='/cart/checked'; // 选择或取消选择商品
+const CartChecked='/cart/checked'; // 选择或取消选择求助
 export function cartChecked(data) {
   return request({
     url: CartChecked,
@@ -189,7 +189,7 @@ export function cartChecked(data) {
     data
   })
 }
-const CartGoodsCount='/cart/goodscount'; // 获取购物车商品件数
+const CartGoodsCount='/cart/goodscount'; // 获取Help求助件数
 export function cartGoodsCount() {
   return request({
     url: CartGoodsCount,
@@ -255,7 +255,7 @@ const SearchResult='/search/result'; //搜索结果
 const SearchHelper='/search/helper'; //搜索帮助
 const SearchClearHistory='/search/clearhistory'; //搜索历史清楚
 
-const AddressList='/address/list'; //收货地址列表
+const AddressList='/address/list'; //求援地址列表
 export function addressList(query) {
   return request({
     url: AddressList,
@@ -264,7 +264,7 @@ export function addressList(query) {
   })
 }
 
-const AddressDetail='/address/detail'; //收货地址详情
+const AddressDetail='/address/detail'; //求援地址详情
 export function addressDetail(query) {
   return request({
     url: AddressDetail,
@@ -272,7 +272,7 @@ export function addressDetail(query) {
     params: query
   })
 }
-const AddressSave='/address/save'; //保存收货地址
+const AddressSave='/address/save'; //保存求援地址
 export function addressSave(data) {
   return request({
     url: AddressSave,
@@ -280,7 +280,7 @@ export function addressSave(data) {
     data
   })
 }
-const AddressDelete='/address/delete'; //保存收货地址
+const AddressDelete='/address/delete'; //保存求援地址
 export function addressDelete(data) {
   return request({
     url: AddressDelete,
@@ -291,7 +291,7 @@ export function addressDelete(data) {
 
 const ExpressQuery='/express/query'; //物流查询
 
-const OrderSubmit='/order/submit'; // 提交订单
+const OrderSubmit='/order/submit'; // 提交揭榜单
 export function orderSubmit(data) {
   return request({
     url: OrderSubmit,
@@ -299,7 +299,7 @@ export function orderSubmit(data) {
     data
   })
 }
-const OrderPrepay='/order/prepay'; // 订单的预支付会话
+const OrderPrepay='/order/prepay'; // 揭榜单的预援助会话
 export function orderPrepay(data) {
   return request({
     url: OrderPrepay,
@@ -307,7 +307,7 @@ export function orderPrepay(data) {
     data
   })
 }
-const OrderH5pay = '/order/h5pay'; // h5支付
+const OrderH5pay = '/order/h5pay'; // h5援助
 export function orderH5pay(data) {
   return request({
     url: OrderH5pay,
@@ -315,7 +315,7 @@ export function orderH5pay(data) {
     data
   });
 }
-export const OrderList='/order/list'; //订单列表
+export const OrderList='/order/list'; //揭榜单列表
 export function orderList(query) {
   return request({
     url: OrderList,
@@ -323,7 +323,7 @@ export function orderList(query) {
     params: query
   })
 }
-const OrderDetail='/order/detail'; //订单详情
+const OrderDetail='/order/detail'; //揭榜单详情
 export function orderDetail(query) {
   return request({
     url: OrderDetail,
@@ -331,7 +331,7 @@ export function orderDetail(query) {
     params: query
   })
 }
-const OrderCancel='/order/cancel'; //取消订单
+const OrderCancel='/order/cancel'; //取消揭榜单
 export function orderCancel(data) {
   return request({
     url: OrderCancel,
@@ -339,7 +339,7 @@ export function orderCancel(data) {
     data
   })
 }
-const OrderRefund='/order/refund'; //退款取消订单
+const OrderRefund='/order/refund'; //退款取消揭榜单
 export function orderRefund(data) {
   return request({
     url: OrderRefund,
@@ -347,7 +347,7 @@ export function orderRefund(data) {
     data
   })
 }
-const OrderDelete='/order/delete'; //删除订单
+const OrderDelete='/order/delete'; //删除揭榜单
 export function orderDelete(data) {
   return request({
     url: OrderDelete,
@@ -355,7 +355,7 @@ export function orderDelete(data) {
     data
   })
 }
-const OrderConfirm='/order/confirm'; //确认收货
+const OrderConfirm='/order/confirm'; //确认求援
 export function orderConfirm(data) {
   return request({
     url: OrderConfirm,
@@ -363,8 +363,8 @@ export function orderConfirm(data) {
     data
   })
 }
-const OrderGoods='/order/goods'; // 代评价商品信息
-const OrderComment='/order/comment'; // 评价订单商品信息
+const OrderGoods='/order/goods'; // 代评价求助信息
+const OrderComment='/order/comment'; // 评价揭榜单求助信息
 
 const FeedbackAdd='/feedback/submit'; //添加反馈
 export function feedbackAdd(data) {
@@ -378,7 +378,7 @@ export function feedbackAdd(data) {
 const FootprintList='/footprint/list'; //足迹列表
 const FootprintDelete='/footprint/delete'; //删除足迹
 
-const GrouponList='/groupon/list'; //团购列表
+const GrouponList='/groupon/list'; //团互援列表
 export function grouponList(query) {
   return request({
     url: GrouponList,
@@ -386,12 +386,12 @@ export function grouponList(query) {
     params: query
   })
 }
-const GroupOn='/groupon/query'; //团购API-查询
-const GroupOnMy='/groupon/my'; //团购API-我的团购
-const GroupOnDetail='/groupon/detail'; //团购API-详情
-const GroupOnJoin='/groupon/join'; //团购API-详情
+const GroupOn='/groupon/query'; //团互援API-查询
+const GroupOnMy='/groupon/my'; //团互援API-我的团互援
+const GroupOnDetail='/groupon/detail'; //团互援API-详情
+const GroupOnJoin='/groupon/join'; //团互援API-详情
 
-const CouponList='/coupon/list'; //优惠券列表
+const CouponList='/coupon/list'; //互助外快列表
 export function couponList(query) {
   return request({
     url: CouponList,
@@ -399,7 +399,7 @@ export function couponList(query) {
     params: query
   })
 }
-export const CouponMyList='/coupon/mylist'; //我的优惠券列表
+export const CouponMyList='/coupon/mylist'; //我的互助外快列表
 export function couponMyList(query) {
   return request({
     url: CouponMyList,
@@ -407,7 +407,7 @@ export function couponMyList(query) {
     params: query
   })
 }
-const CouponSelectList='/coupon/selectlist'; //当前订单可用优惠券列表
+const CouponSelectList='/coupon/selectlist'; //当前揭榜单可用互助外快列表
 export function couponSelectList(query) {
   return request({
     url: CouponSelectList,
@@ -415,7 +415,7 @@ export function couponSelectList(query) {
     params: query
   })
 }
-const CouponReceive='/coupon/receive'; //优惠券领取
+const CouponReceive='/coupon/receive'; //互助外快领取
 export function couponReceive(data) {
   return request({
     url: CouponReceive,
@@ -423,7 +423,7 @@ export function couponReceive(data) {
     data
   })
 }
-const CouponExchange='/coupon/exchange'; //优惠券兑换
+const CouponExchange='/coupon/exchange'; //互助外快兑换
 
 const StorageUpload='/storage/upload'; //图片上传,
 

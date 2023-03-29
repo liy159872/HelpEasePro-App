@@ -2,7 +2,7 @@
   <div class="item_search">
     <form action="/search"
           @submit="disabledSubmit">
-      <van-search placeholder="请输入商品名称"
+      <van-search placeholder="请输入求助名称"
                   v-model="keyword"
                   @search="enterSearch"
                   autofocus />
@@ -39,7 +39,7 @@
                 @click="itemClick(item.id)" />
     </van-list>
 
-    <is-empty v-if="isEmpty">抱歉,没有找到符合条件商品</is-empty>
+    <is-empty v-if="isEmpty">抱歉,没有找到符合条件求助</is-empty>
   </div>
 </template>
 

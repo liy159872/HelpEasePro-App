@@ -1,7 +1,7 @@
 <template>
 <div class="order">
   <van-cell-group>
-      <van-cell v-if="checkedAddress" isLink @click="goAddressList()" title="收货地址">
+      <van-cell v-if="checkedAddress" isLink @click="goAddressList()" title="求援地址">
       <div slot="label">
         <div>
          <span>{{ checkedAddress.name }} </span>
@@ -15,10 +15,10 @@
   </van-cell-group>
 
   <van-cell-group>
-    <van-cell class="order-coupon" title="优惠券" is-link :value="getCouponValue()" @click="getCoupons" />
+    <van-cell class="order-coupon" title="互助外快" is-link :value="getCouponValue()" @click="getCoupons" />
   </van-cell-group>
 
-<!-- 优惠券列表 -->
+<!-- 互助外快列表 -->
 <van-popup v-model="showList" position="bottom">
   <van-coupon-list
     :coupons="coupons"
@@ -47,24 +47,24 @@
     </van-card>
 
     <van-cell-group>
-      <van-cell title="商品金额">
+      <van-cell title="求助金额">
         <span class="red">{{goodsTotalPrice * 100 | yuan}}</span>
       </van-cell>
       <van-cell title="邮费">
         <span class="red">{{ freightPrice * 100| yuan}}</span>
       </van-cell>
-      <van-cell title="优惠券">
+      <van-cell title="互助外快">
         <span class="red">-{{ couponPrice * 100| yuan}}</span>
       </van-cell>
-      <van-field v-model="message" placeholder="请输入备注" label="订单备注">
+      <van-field v-model="message" placeholder="请输入备注" label="揭榜单备注">
       <template slot="icon">{{message.length}}/50</template>
-      </van-field>      
+      </van-field>
     </van-cell-group>
 
     <van-submit-bar
       :price="actualPrice*100"
       label="总计："
-      buttonText="提交订单"
+      buttonText="提交揭榜单"
       :disabled="isDisabled"
       @submit="onSubmit"
     />
@@ -83,20 +83,20 @@ export default {
     return {
       checkedGoodsList: [],
       checkedAddress: {},
-      availableCouponLength: 0, // 可用的优惠券数量
-      goodsTotalPrice: 0, //商品总价
-      freightPrice: 0, //快递费
-      couponPrice: 0, //优惠券的价格
-      grouponPrice: 0, //团购优惠价格
-      orderTotalPrice: 0, //订单总价
-      actualPrice: 0, //实际需要支付的总价
+      availableCouponLength: 0, // 可用的互助外快数量
+      goodsTotalPrice: 0, //求助总价
+      freightPrice: 0, //跑腿费
+      couponPrice: 0, //互助外快的价格
+      grouponPrice: 0, //团互援外快
+      orderTotalPrice: 0, //揭榜单总价
+      actualPrice: 0, //实际需要援助的总价
       message: '',
 
       isDisabled: false,
       showList: false,
       chosenCoupon: -1,
       coupons: [],
-      disabledCoupons: [] 
+      disabledCoupons: []
     };
   },
   created() {
@@ -104,11 +104,11 @@ export default {
   },
 
   methods: {
-    onSubmit() {     
+    onSubmit() {
       const {AddressId, CartId, CouponId, UserCouponId} = getLocalStorage('AddressId', 'CartId', 'CouponId', 'UserCouponId');
 
       if (AddressId === null || AddressId === "0") {
-        Toast.fail('请设置收货地址');
+        Toast.fail('请设置求援地址');
         return;
       }
 
@@ -124,7 +124,7 @@ export default {
         grouponRulesId: 0,
         message: this.message
       }).then(res => {
-        
+
         // 下单成功，重置下单参数。
         setLocalStorage({AddressId: 0, CartId: 0, CouponId: 0});
 
@@ -151,7 +151,7 @@ export default {
       if(this.availableCouponLength !== 0){
         return this.availableCouponLength + "张可用"
       }
-      return '没有可用优惠券'
+      return '没有可用互助外快'
     },
     getCoupons() {
       const {AddressId, CartId, CouponId} = getLocalStorage('AddressId', 'CartId', 'CouponId');
@@ -172,7 +172,7 @@ export default {
             startAt: new Date(c.startTime).getTime()/1000,
             endAt: new Date(c.endTime).getTime()/1000,
             valueDesc: c.discount,
-            unitDesc: '元'            
+            unitDesc: '元'
           }
           if (c.available) {
             this.coupons.push(coupon);
@@ -180,7 +180,7 @@ export default {
             this.disabledCoupons.push(coupon);
           }
         }
-        
+
         this.showList = true
       })
     },
@@ -207,7 +207,7 @@ export default {
     onChange(index) {
       this.showList = false;
       this.chosenCoupon = index;
-      
+
       if(index === -1 ){
         setLocalStorage({CouponId: -1, UserCouponId: -1});
       }
@@ -221,7 +221,7 @@ export default {
     },
     onExchange() {
       this.$toast("兑换暂不支持");
-    }    
+    }
   },
 
   components: {

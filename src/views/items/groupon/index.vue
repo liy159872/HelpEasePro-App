@@ -1,7 +1,7 @@
 <template>
   <div class="goods_groupon">
     <div class="banner">
-      <div class="title">团购列表</div>
+      <div class="title">团互援列表</div>
     </div>
 
     <van-list v-model="loading"

@@ -1,7 +1,7 @@
 <template>
   <div class="tab_class">
     <div class="tal_class_searchBox">
-      <van-search placeholder="点击前往搜索"/>
+      <van-search placeholder="HelpEasePro-PC搜索"/>
       <div class="tal_class_searchMask" @click="$router.push({ name: 'search' })"></div>
     </div>
 
@@ -65,7 +65,7 @@ export default {
     changeCatalog(id) {
       catalogCurrent({ id: id}).then(res => {
         let data = res.data.data;
-        this.currentCategory = data.currentCategory;        
+        this.currentCategory = data.currentCategory;
         this.currentSubCategoryList = data.currentSubCategory;
       });
     },
@@ -148,7 +148,7 @@ export default {
     background-color: #fff;
     border-left: 2px solid $red;
     color: $red;
-  }  
+  }
 }
 .class_tree_content {
   margin-left: 100px;

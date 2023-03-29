@@ -44,7 +44,7 @@
   </div>
 
     <div class="item_desc">
-      <div class="item_desc_title">商品详情</div>
+      <div class="item_desc_title">求助详情</div>
       <div class="item_desc_wrap" v-if="goods.info.detail" v-html="goods.info.detail"></div>
       <div class="item_desc_wrap" v-else style="text-align: center;">
         <p>无详情</p>
@@ -54,8 +54,8 @@
     <van-goods-action>
       <van-goods-action-icon @click="toCart" icon="cart-o" :info="(cartInfo > 0) ? cartInfo : ''"/>
       <van-goods-action-icon @click="addCollect" icon="star-o" :style="(goods.userHasCollect !== 0) ? 'color: #f7b444;':''"/>
-      <van-goods-action-button type="warning" @click="skuClick" text="加入购物车"/>
-      <van-goods-action-button type="danger" @click="skuClick" text="立即购买"/>
+      <van-goods-action-button type="warning" @click="skuClick" text="加入Help"/>
+      <van-goods-action-button type="danger" @click="skuClick" text="立即揭榜"/>
     </van-goods-action>
 
   </div>
@@ -92,9 +92,9 @@ export default {
         price: '1.00' // 默认价格（单位元）
       },
       skuGoods: {
-        // 商品标题
+        // 求助标题
         title: '',
-        // 默认商品 sku 缩略图
+        // 默认求助 sku 缩略图
         picture: ''
       },
       cartInfo: 0,
@@ -221,7 +221,7 @@ export default {
       cartAdd(params).then(() => {
         this.cartInfo = this.cartInfo + data.selectedNum;
         this.$toast({
-          message: '已添加至购物车',
+          message: '已添加至Help',
           duration: 1500
         });
         that.showSku = false;
@@ -261,8 +261,8 @@ export default {
       const skuInfo = {
         price: parseInt(this.goods.info.retailPrice), // 未选择规格时的价格
         stock_num: 0, // TODO 总库存
-        collection_id: '', // 无规格商品skuId取collection_id，否则取所选sku组合对应的id
-        none_sku: false, // 是否无规格商品
+        collection_id: '', // 无规格求助skuId取collection_id，否则取所选sku组合对应的id
+        none_sku: false, // 是否无规格求助
         hide_stock: true
       };
       this.sku = {
