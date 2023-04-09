@@ -21,18 +21,18 @@
   <div class="item_cell_group">
     <van-cell-group>
       <van-cell
-        title="规格"
+        title="承诺"
         isLink
         value="请选择"
         @click.native="skuClick"
       />
       <van-cell title="属性" isLink @click.native="propsPopup = true"/>
-      <van-cell title="运费" value="满88免邮费"/>
+      <van-cell title="跑腿" value="跑腿费另付"/>
     </van-cell-group>
     <van-sku
       v-model="showSku"
       :sku="sku"
-      :hide-stock="true"
+      :hide-stock="false"
       :goods="skuGoods"
       :goodsId="goods.info.id"
       @buy-clicked="buyGoods"
@@ -52,8 +52,8 @@
     </div>
 
     <van-goods-action>
-      <van-goods-action-icon @click="toCart" icon="cart-o" :info="(cartInfo > 0) ? cartInfo : ''"/>
-      <van-goods-action-icon @click="addCollect" icon="star-o" :style="(goods.userHasCollect !== 0) ? 'color: #f7b444;':''"/>
+      <van-goods-action-icon @click="toCart" icon="https://i.328888.xyz/2023/04/04/ijWotq.png" :info="(cartInfo > 0) ? cartInfo : ''"/>
+      <van-goods-action-icon @click="addCollect" icon="https://i.328888.xyz/2023/04/04/ij0BRt.png" :style="(goods.userHasCollect !== 0) ? 'color: #f7b444;':''"/>
       <van-goods-action-button type="warning" @click="skuClick" text="加入Help"/>
       <van-goods-action-button type="danger" @click="skuClick" text="立即揭榜"/>
     </van-goods-action>
@@ -206,7 +206,7 @@ export default {
       };
       if (_.has(data.selectedSkuComb, 's3')) {
         this.$toast({
-          message: '目前仅支持两规格',
+          message: '目前仅支持两承诺',
           duration: 1500
         });
         return;
@@ -236,7 +236,7 @@ export default {
       };
       if (_.has(data.selectedSkuComb, 's3')) {
         this.$toast({
-          message: '目前仅支持两规格',
+          message: '目前仅支持两承诺',
           duration: 1500
         });
         return;
@@ -259,10 +259,10 @@ export default {
       const tree = this.setSkuTree();
       const list = this.setSkuList();
       const skuInfo = {
-        price: parseInt(this.goods.info.retailPrice), // 未选择规格时的价格
+        price: parseInt(this.goods.info.retailPrice), // 未选择承诺时的价格
         stock_num: 0, // TODO 总库存
-        collection_id: '', // 无规格求助skuId取collection_id，否则取所选sku组合对应的id
-        none_sku: false, // 是否无规格求助
+        collection_id: '', // 无承诺求助skuId取collection_id，否则取所选sku组合对应的id
+        none_sku: false, // 是否无承诺求助
         hide_stock: true
       };
       this.sku = {

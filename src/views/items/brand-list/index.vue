@@ -16,7 +16,7 @@
           <div class="info-box">
             <div class="txt">{{brand.name}}</div>
             <div class="line"></div>
-            <div class="price">{{brand.floorPrice}}元起</div>
+            <div class="price">揭榜{{brand.floorPrice}}元+外快</div>
           </div>
         </div>
         <div class="desc">
@@ -81,6 +81,7 @@ export default {
     .name {
       width: 100%;
       height: 180px;
+      overflow: hidden; /* 隐藏超出容器宽高的部分 */
       position: relative;
 
       .img {
@@ -89,6 +90,7 @@ export default {
         left: 0;
         width: 100%;
         height: 180px;
+        object-fit: cover; /* 按比例缩放图像以填充容器 */
       }
 
       .info-box {

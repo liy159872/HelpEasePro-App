@@ -47,10 +47,10 @@
     </van-card>
 
     <van-cell-group>
-      <van-cell title="求助金额">
+      <van-cell title="援助报酬">
         <span class="red">{{goodsTotalPrice * 100 | yuan}}</span>
       </van-cell>
-      <van-cell title="邮费">
+      <van-cell title="跑腿费">
         <span class="red">{{ freightPrice * 100| yuan}}</span>
       </van-cell>
       <van-cell title="互助外快">

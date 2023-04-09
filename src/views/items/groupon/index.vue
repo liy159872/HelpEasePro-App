@@ -24,8 +24,8 @@
           </van-tag>
           <van-tag plain
                    type="danger"
-                   style="margin-left:5px;">
-            {{item.grouponDiscount}}元再减
+                   style="margin-left:5px;">揭榜再加
+            {{item.grouponDiscount}}元
           </van-tag>
         </div>
       </van-card>
@@ -91,7 +91,7 @@ export default {
   padding: 20px;
   .banner {
     height: 250px;
-    background-image: url('http://yanxuan.nosdn.127.net/8976116db321744084774643a933c5ce.png');
+    background-image: url('https://i.328888.xyz/2023/04/04/ijgqQL.png');
     background-size: cover;
     margin-bottom: 20px;
     .title {

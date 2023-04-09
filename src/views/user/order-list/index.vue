@@ -32,7 +32,7 @@
                 </div>
               </div>
             </van-card>
-            <div class="total">合计: {{el.actualPrice * 100 | yuan}}（含运费{{el.post_fee | yuan}}）</div>
+            <div class="total">合计: {{el.actualPrice * 100 | yuan}}（含跑腿费{{el.post_fee | yuan}}）</div>
 
             <div slot="footer"
                  class="footer_btn">
@@ -88,7 +88,7 @@ export default {
   data() {
     return {
       activeIndex: Number(this.active),
-      tabTitles: ['全部', '待援助', '待到达', '待求援', '待评价'],
+      tabTitles: ['全部', '待援助', '求助', '援助中', '待评价'],
       orderList: [],
       page: 0,
       limit: 10,

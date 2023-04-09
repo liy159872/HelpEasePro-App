@@ -56,7 +56,7 @@
                 :title="grouponGood.name"
                 :desc="grouponGood.brief"
                 :origin-price="grouponGood.retailPrice"
-                :price="grouponGood.grouponPrice +'.00'"
+                :price="grouponGood.grouponPrice + 2 * grouponGood.grouponDiscount +'.00'"
                 :thumb="grouponGood.picUrl"
                 @native-click="goDetail(grouponGood.id)">
         <div slot="tags"
@@ -66,8 +66,8 @@
             {{grouponGood.grouponMember}}人成团
           </van-tag>
           <van-tag plain
-                   type="danger">
-            {{grouponGood.grouponDiscount}}元再减
+                   type="danger">揭榜再加
+            {{grouponGood.grouponDiscount}}元
           </van-tag>
         </div>
       </van-card>
@@ -112,10 +112,10 @@
                  :key="index">
           <router-link :to="{ path: `/items/detail/${newGood.id}`}">
             <img :src="newGood.picUrl"
-                 style="width:180px;height:180px;">
+                 style="height:180px;">
           </router-link>
-          <span style="padding-left: 20px;position: relative;bottom: 10px; color: rgb(123, 116, 116);white-space: nowrap;">{{newGood.name}}</span>
-          <span style="padding-left: 80px;position: relative;bottom: 10px; color:#ab956d">￥ {{newGood.retailPrice}}</span>
+          <span style="padding-left: 20px;position: relative;bottom: 0px; color: rgb(123, 116, 116);white-space: nowrap;">{{newGood.name}}</span>
+          <span style="padding-left: 80px;position: relative;bottom: 0px; color:#ab956d">￥ {{newGood.retailPrice}}</span>
         </van-col>
       </van-row>
       <div slot='header'>
@@ -159,7 +159,7 @@
                        :key="index"
                        :url="goTopic(topic.id)">
           <img :src="topic.picUrl"
-               style="width: 90%; max-height: 150px;" />
+               style="width: 90%;" />
           <div style="font-size:14px;color:#ab956d;"> {{ topic.title }}</div>
           <div style="font-size:10px;color:#ab956d;"> {{ topic.subtitle }}</div>
         </van-grid-item>

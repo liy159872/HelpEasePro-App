@@ -25,7 +25,7 @@ export default {
           name: '首页',
           path: '/',
           pathName: 'home',
-          icon: 'compass-full',
+          icon: 'https://i.328888.xyz/2023/04/04/ijOhnp.png',
           dot: false,
           info: ''
         },
@@ -33,7 +33,7 @@ export default {
           name: '分类',
           path: '/items',
           pathName: 'class',
-          icon: 'class-full',
+          icon: 'https://i.328888.xyz/2023/04/04/ij2Ld5.png',
           dot: false,
           info: ''
         },
@@ -41,7 +41,7 @@ export default {
           name: 'Help',
           path: '/order',
           pathName: 'cart',
-          icon: 'cart-full',
+          icon: 'https://i.328888.xyz/2023/04/04/ijW4Lq.png',
           dot: false,
           info: ''
         },
@@ -49,7 +49,7 @@ export default {
           name: '我的',
           path: '/user',
           pathName: 'user',
-          icon: 'wode',
+          icon: 'https://www.hualigs.cn/image/641fdd4dac243.jpg',
           dot: false,
           info: ''
         }
@@ -86,3 +86,11 @@ export default {
   }
 };
 </script>
+
+
+<style>
+/* 使用类名选择 */
+.van-tabbar-item .van-icon {
+  font-size: 50px;
+}
+</style>

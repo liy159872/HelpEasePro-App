@@ -14,7 +14,7 @@
     </van-cell-group>
 
     <div class="pay_way_group">
-      <div class="pay_way_title">选择援助方式</div>
+      <div class="pay_way_title">选择收款方式</div>
       <van-radio-group v-model="payWay">
         <van-cell-group>
           <van-cell>
@@ -71,7 +71,7 @@ export default {
     pay() {
 
       Dialog.alert({
-        message: '你选择了' + (this.payWay === 'wx' ? '微信支付' : '支付宝支付')
+        message: '你选择了' + (this.payWay === 'wx' ? '微信收款' : '支付宝收款')
       }).then(() => {
         if (this.payWay === 'wx') {
           let ua = navigator.userAgent.toLowerCase();

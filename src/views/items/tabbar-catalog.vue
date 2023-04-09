@@ -116,7 +116,7 @@ export default {
   font-family: PingFangSC-Light, helvetica, 'Heiti SC';
   font-size: 13px;
   position: absolute;
-  top: 95px;
+  top: 100px;
 }
 .box span {
   line-height: 20px;
@@ -185,7 +185,7 @@ export default {
     .class_tree_item_img {
       display: inline-block;
       max-width: 100%;
-      width: 70px;
+      width: 65px;
       height: 70px;
     }
     .class_tree_item_name {

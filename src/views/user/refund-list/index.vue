@@ -26,7 +26,7 @@
               />
               <div
                 class="order_list--total"
-              >合计: {{el.refund_fee | yuan}}（含运费{{el.refund_post_fee | yuan}}）</div>
+              >合计: {{el.refund_fee | yuan}}（含跑腿费{{el.refund_post_fee | yuan}}）</div>
             </div>
             <div slot="footer" style="text-align: right;">
               <van-button

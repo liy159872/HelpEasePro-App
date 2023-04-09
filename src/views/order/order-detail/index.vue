@@ -10,7 +10,7 @@
                 :thumb="item.picUrl"></van-card>
 
       <van-cell-group>
-        <van-cell title="求助金额">
+        <van-cell title="援助报酬">
           <span class="red">{{orderInfo.goodsPrice * 100 | yuan}}</span>
         </van-cell>
         <van-cell title="跑腿费用">

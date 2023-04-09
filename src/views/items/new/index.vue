@@ -81,7 +81,7 @@ export default {
   padding: 20px;
   .banner {
     height: 250px;
-    background-image: url('http://yanxuan.nosdn.127.net/8976116db321744084774643a933c5ce.png');
+    background-image: url('https://i.328888.xyz/2023/04/04/ijxuIJ.jpeg');
     background-size: cover;
     margin-bottom: 20px;
     .title {
