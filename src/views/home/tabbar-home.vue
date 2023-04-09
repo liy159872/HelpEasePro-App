@@ -55,8 +55,8 @@
                 :key="index"
                 :title="grouponGood.name"
                 :desc="grouponGood.brief"
-                :origin-price="grouponGood.retailPrice"
-                :price="grouponGood.grouponPrice + 2 * grouponGood.grouponDiscount +'.00'"
+                :origin-price="grouponGood.retailPrice+ grouponGood.grouponDiscount"
+                :price="grouponGood.grouponPrice + 3 * grouponGood.grouponDiscount +'.00'"
                 :thumb="grouponGood.picUrl"
                 @native-click="goDetail(grouponGood.id)">
         <div slot="tags"

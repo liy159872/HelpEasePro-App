@@ -13,9 +13,14 @@
         <div>待援助</div>
       </van-col>
       <van-col span="6">
-        <div class="order_status_icon" @click="$router.push({path: '/user/order/list/2'})">
+<!--        <div class="order_status_icon" @click="$router.push({path: '/user/order/list/2'})">-->
+<!--          <van-icon size="33" name="https://i.328888.xyz/2023/04/04/ij0pUX.png" :info="order.unship > 0 ? order.unship : ''"/>-->
+<!--        </div>-->
+        <a href="http://localhost:8084/me">
+        <div class="order_status_icon" >
           <van-icon size="33" name="https://i.328888.xyz/2023/04/04/ij0pUX.png" :info="order.unship > 0 ? order.unship : ''"/>
         </div>
+        </a>
         <div>求助</div>
       </van-col>
       <van-col span="6">

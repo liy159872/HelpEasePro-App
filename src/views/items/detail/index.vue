@@ -8,8 +8,8 @@
     <van-cell-group class="item_cell_group" v-if="goods">
       <van-cell class="item_info">
         <div>
-          <span class="item_price">{{ goods.info.retailPrice*100 | yuan }}</span>
-          <span class="item_market_price">{{goods.info.counterPrice*100 | yuan}}</span>
+          <span class="item_price">{{goods.info.counterPrice*100 | yuan}}</span>
+          <span class="item_market_price">{{ goods.info.retailPrice*100 | yuan }}</span>
         </div>
         <div class="item-title">
           {{ goods.info.name }}
