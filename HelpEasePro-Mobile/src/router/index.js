@@ -27,6 +27,10 @@ const routes = [
                 path: 'me',
                 component: () => import('../views/Me')
             },
+            {
+                path: '/author',
+                component: () => import('../views/author')
+            },
         ]
     },
     {
@@ -48,6 +52,11 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: () => import('../views/Login')
+    },
+    {
+        path: '/author',
+        name: 'Author',
+        component: () => import('../views/author')
     },
 ]
 

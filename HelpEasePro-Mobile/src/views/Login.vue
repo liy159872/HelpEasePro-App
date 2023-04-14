@@ -82,7 +82,7 @@ export default {
           if (res.status) {
             localStorage.setItem("user", JSON.stringify(res.data))
             localStorage.setItem("uid", res.data.id)
-            this.$toast.success("登录成功")
+            this.$toast.success("验证成功")
             this.$router.push("/")
           }
         })

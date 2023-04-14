@@ -12,6 +12,7 @@
 import avatar_default from '@/assets/images/avatar_default.png';
 import bg_default from '@/assets/images/user_head_bg.png';
 import { getLocalStorage } from '@/utils/local-storage';
+import { authInfo, authLogout, authProfile } from '@/api/api';
 
 export default {
   name: 'user-header',
@@ -43,6 +44,10 @@ export default {
       );
       this.avatar = infoData.avatar || avatar_default;
       this.nickName = infoData.nickName || '昵称';
+      console.log(infoData);
+      authInfo().then(res => {
+        this.nickName = res.data.data.nickName;
+      });
     },
     toSetting() {
       this.$router.push({ name: 'user-information' });

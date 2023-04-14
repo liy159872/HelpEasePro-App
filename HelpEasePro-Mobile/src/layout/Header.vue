@@ -71,7 +71,8 @@ export default {
   methods: {
 
     onClickLeft() {
-      this.$router.push('/home')
+      // this.$router.push('/home')
+      window.location.href = 'http://localhost:6255/#/';
     },
 
     onSearch() {

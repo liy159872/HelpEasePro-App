@@ -7,12 +7,14 @@
     </van-cell-group>
     <van-popup v-model="showKefu">
       <van-cell-group>
-        <van-cell title="项目名称" value="litemall" />
-        <van-cell title="项目地址" value="Github"  url="https://github.com/linlinjava/litemall"/>
-        <van-cell title="项目地址" value="Gitee"  url="https://gitee.com/linlinjava/litemall"/>
-        <van-cell title="联系电话" value="021-xxxx-xxxx" />
-        <van-cell title="联系QQ" value="738696120" />
-        <van-cell title="当前版本" value="V1.0" />
+        <van-cell title="项目名称" value="HelpEasePro" />
+        <van-cell title="服务对象" value="昆明理工大学-----毕业设计" />
+        <van-cell title="author" value="李文国" />
+        <van-cell title="项目地址" value="Github"  url="https://github.com/liy159872?tab=repositories"/>
+        <van-cell title="项目地址" value="Gitee"  url="https://gitee.com/liyiaixuemei"/>
+        <van-cell title="联系电话" value="14736856351" />
+        <van-cell title="联系QQ" value="2080863176" />
+        <van-cell title="当前版本" value="V4.0.0" />
         <van-cell title="开源协议" value="MIT" />
       </van-cell-group>
     </van-popup>
@@ -31,8 +33,8 @@ export default {
 
   components: {
     [Popup.name]: Popup,
-    [Cell.name]: Cell, 
-    [CellGroup.name]: CellGroup    
+    [Cell.name]: Cell,
+    [CellGroup.name]: CellGroup
   }
 };
 </script>

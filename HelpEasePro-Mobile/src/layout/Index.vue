@@ -29,11 +29,15 @@ export default {
           path: '/home'
         },
         {
-          icon: 'play-circle',
+          icon: 'https://i.328888.xyz/2023/04/13/igHsFc.png',
           title: '视频',
           path: '/video'
         },
-
+        {
+          icon: 'https://i.328888.xyz/2023/04/13/igO4tU.png',
+          title: 'author',
+          path: '/author'
+        },
         {
           icon: './favicon.ico',
           title: '我的',

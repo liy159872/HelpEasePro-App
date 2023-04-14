@@ -15,6 +15,12 @@
     </van-swipe>
 
     <div class="goods-channel">
+      <div class="item" @click="goToAuthor">
+      <img src="https://i.328888.xyz/2023/04/13/igO4tU.png"
+           background-size="cover" />
+      <span>作者</span>
+    </div>
+
       <div class="item"
            @click="changeTabbar(channel)"
            v-for="(channel, index) in shopInfos.channel"
@@ -217,6 +223,10 @@ export default {
   },
 
   methods: {
+    goToAuthor() {
+      this.$router.push('/author');
+    },
+
     goDetail(id) {
       return `#/items/detail/${id}`;
     },

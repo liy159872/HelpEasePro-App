@@ -10,6 +10,7 @@ module.exports = {
   assetsDir: 'static',
   productionSourceMap: false,
   devServer: {
+    disableHostCheck: true,
     //九键输入法的 「mall」= 「6255」
     port: 6255,
     proxy: {

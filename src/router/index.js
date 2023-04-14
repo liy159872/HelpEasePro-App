@@ -12,7 +12,14 @@ import store from '../store/index';
 Vue.use(Router);
 
 const RouterModel = new Router({
-  routes: [...home, ...items, ...user, ...order, ...login]
+  routes: [...home, ...items, ...user, ...order, ...login,
+    {
+      path: '/author',
+      name: 'Author',
+      component: () => import('@/views/author')
+    },
+
+  ]
 });
 
 RouterModel.beforeEach((to, from, next) => {
