@@ -363,6 +363,16 @@ export function orderConfirm(data) {
     data
   })
 }
+
+const Ordersimulationpay='/order/simulationpay'; //H5模拟援助
+export function ordersimulationpay(data) {
+  return request({
+    url: Ordersimulationpay,
+    method: 'post',
+    data
+  })
+}
+
 const OrderGoods='/order/goods'; // 代评价求助信息
 const OrderComment='/order/comment'; // 评价揭榜单求助信息
 

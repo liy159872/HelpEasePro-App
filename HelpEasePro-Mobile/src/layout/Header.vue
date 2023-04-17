@@ -72,7 +72,8 @@ export default {
 
     onClickLeft() {
       // this.$router.push('/home')
-      window.location.href = 'http://localhost:6255/#/';
+      // window.location.href = 'http://localhost:6255/#/';
+      window.location.href = 'http://helpeasepro.vipgz4.91tunnel.com/#/';
     },
 
     onSearch() {

@@ -1,8 +1,8 @@
 <template>
   <div class="payment">
-    <div class="time_down payment_group">
+    <div class="time_down payment_group" @click="startCountDown">
       请在
-      <span class="red">半小时内</span>
+      <span class="red">{{ countDown }}</span>
       完成援助，否则系统自动取消揭榜
     </div>
 
@@ -39,7 +39,7 @@
 
 <script>
 import { Radio, RadioGroup, Dialog } from 'vant';
-import { orderDetail, orderPrepay, orderH5pay } from '@/api/api';
+import { orderDetail, orderPrepay, orderH5pay,ordersimulationpay } from '@/api/api';
 import _ from 'lodash';
 import { getLocalStorage, setLocalStorage } from '@/utils/local-storage';
 
@@ -48,6 +48,10 @@ export default {
 
   data() {
     return {
+      remainingTime: 0,
+      countDown: '',
+      lastTimestamp: null,
+
       payWay: 'wx',
       order: {
         orderInfo: {},
@@ -56,6 +60,22 @@ export default {
       orderId: 0
     };
   },
+
+  mounted() {
+    this.loadLastTimestamp()
+    if (this.lastTimestamp) {
+      this.remainingTime = this.lastTimestamp - Date.now()
+      this.updateCountDown()
+      setInterval(this.updateCountDown, 1000)
+    }
+    // Add the following code to trigger startCountDown on the first visit only
+    const hasStarted = localStorage.getItem('hasStarted')
+    if (!hasStarted) {
+      this.startCountDown()
+      localStorage.setItem('hasStarted', true)
+    }
+  },
+
   created() {
     if (_.has(this.$route.params, 'orderId')) {
       this.orderId = this.$route.params.orderId;
@@ -63,12 +83,65 @@ export default {
     }
   },
   methods: {
+    startCountDown() {
+      if (!this.lastTimestamp) {
+        this.lastTimestamp = Date.now() + 30 * 60 * 1000
+        localStorage.setItem('lastTimestamp', this.lastTimestamp)
+      }
+      if (!this.remainingTime) {
+        this.remainingTime = this.lastTimestamp - Date.now()
+        setInterval(this.updateCountDown, 1000)
+      }
+    },
+    updateCountDown() {
+      const minutes = Math.floor(this.remainingTime / 60000)
+      const seconds = Math.floor((this.remainingTime % 60000) / 1000)
+      this.countDown = `${minutes}:${seconds.toString().padStart(2, '0')}`
+      this.remainingTime -= 1000
+      if (this.remainingTime <= 0) {
+        this.remainingTime = 0
+        localStorage.removeItem('lastTimestamp')
+        clearInterval(this.updateCountDown)
+      }
+    },
+    loadLastTimestamp() {
+      const timestamp = localStorage.getItem('lastTimestamp')
+      if (timestamp) {
+        this.lastTimestamp = parseInt(timestamp)
+      }
+    },
+
     getOrder(orderId) {
       orderDetail({orderId: orderId}).then(res => {
         this.order = res.data.data;
       });
     },
+
     pay() {
+      Dialog.alert({
+        message: '你选择了' + (this.payWay === 'wx' ? '微信收款' : '支付宝收款')
+      }).then(() => {
+        this.$dialog
+            .confirm({
+              message: '确认援助后,请尽快前往援助!'
+            })
+            .then(() => {
+              console.log(this.orderId);
+              ordersimulationpay({orderId: this.orderId}).then(() => {
+                this.$toast({
+                  message: '请尽快前往援助',
+                  type: 'success',
+                  position: 'top'
+                });
+                this.$router.push('/user/order/list/3');
+              });
+            })
+            .catch(() => {
+            });
+      });
+    },
+
+    noenpay() {
 
       Dialog.alert({
         message: '你选择了' + (this.payWay === 'wx' ? '微信收款' : '支付宝收款')

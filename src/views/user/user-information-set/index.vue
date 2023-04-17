@@ -18,6 +18,13 @@
       <van-cell title="性别" :value="genderText" @click="showSex = true" isLink/>
       <van-cell title="密码设置" to="/user/information/setPassword" isLink/>
       <van-cell title="手机号" to="/user/information/setMobile" :value="mobile" isLink></van-cell>
+
+<!--      <a href="http://localhost:8084/login">-->
+<!--      <van-cell title="高校专区" to="" value="HelpEasePro" isLink></van-cell>-->
+<!--      </a>-->
+      <a href="https://2h7838k921.zicp.fun/login">
+        <van-cell title="高校专区" to="" value="HelpEasePro" isLink></van-cell>
+      </a>
     </van-cell-group>
 
     <van-button size="large" class="user_quit" @click="loginOut">退出当前账户</van-button>

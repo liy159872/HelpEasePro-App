@@ -139,9 +139,10 @@ export default {
     confirmOrder(id) {
       this.$dialog
         .confirm({
-          message: '请确认收到货物, 确认求援后无法撤销!'
+          message: '请确认援助完成后确认, 确认求援后无法撤销!'
         })
         .then(() => {
+          console.log(id);
           orderConfirm({ orderId: id }).then(() => {
             this.init();
             this.$toast('已确认求援');

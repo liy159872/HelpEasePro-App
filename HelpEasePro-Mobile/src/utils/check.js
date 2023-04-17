@@ -29,7 +29,7 @@ export function checkSignUpForm(form) {
         Toast.fail("请输入11位的手机号码")
         return false
     }
-    if (form.nickname.length < 3 || form.nickname.length > 10) {
+    if (form.nickname.length < 2 || form.nickname.length > 10) {
         Toast.fail("请输入3~10个字符的昵称")
         return false
     }

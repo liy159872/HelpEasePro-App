@@ -1,6 +1,7 @@
 <template>
   <div class="main">
-    <a href="http://localhost:6255/#/user/information">
+<!--    <a href="http://localhost:6255/#/user/information">-->
+    <a href="http://helpeasepro.vipgz4.91tunnel.com/#/user/information">
     <div style="display: flex;padding: 10px">
       <van-image
           round
@@ -21,7 +22,8 @@
       <div class="card-title">我的数据</div>
       <van-row style="text-align: center">
         <van-col span="8" class="card-item">{{user.articleCount}}
-          <a href="http://localhost:6255/#/items/new">
+<!--          <a href="http://localhost:6255/#/items/new">-->
+          <a href="http://helpeasepro.vipgz4.91tunnel.com/#/items/new">
           <div class="card-d1">求助</div>
           </a>
         </van-col>

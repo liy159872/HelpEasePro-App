@@ -5,6 +5,13 @@
         <img v-lazy="image" width="100%">
       </van-swipe-item>
     </van-swipe>
+
+<!--    <van-swipe :autoplay="3000" style="height: 200px">-->
+<!--      <van-swipe-item v-for="(image, index) in goods.info.gallery" :key="index">-->
+<!--        <img v-lazy="image" width="100%">-->
+<!--      </van-swipe-item>-->
+<!--    </van-swipe>-->
+
     <van-cell-group class="item_cell_group" v-if="goods">
       <van-cell class="item_info">
         <div>
