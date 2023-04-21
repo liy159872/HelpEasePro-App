@@ -1,7 +1,7 @@
 import axios from "axios"
 import {Toast} from "vant"
 
-export const BASE_RUL = 'http://localhost:8081/api'
+export const BASE_RUL = 'http://10.38.16.184:8081/api'
 
 const request = axios.create({
     baseURL: BASE_RUL,
