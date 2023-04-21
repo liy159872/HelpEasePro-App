@@ -123,6 +123,7 @@ export default {
 }
 
 .author-name {
+  width: 63px;
   padding-left: 10px;
   font-size: 12px;
   letter-spacing: 1px;
