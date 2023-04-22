@@ -8,7 +8,7 @@
             round
             width="37"
             height="37"
-            :src="base + '/file/image/' + data.author.avatar"
+            :src="'/api/file/image/' + data.author.avatar"
         />
         <div class="des">
           <div class="des-name">{{ data.author.nickname }}</div>
@@ -34,7 +34,7 @@
       <van-image
           width="100%"
           fit="contain"
-          :src="base + '/file/image/' + data.article.poster"
+          :src="'/api/file/image/' + data.article.poster"
       />
 
       <div class="content-time">发布于 {{ data.article.createAt }} · 未经作者允许禁止转载</div>
@@ -72,7 +72,7 @@
                 round
                 width="30"
                 height="30"
-                :src="base + '/file/image/' + item.user.avatar"
+                :src="'/api/file/image/' + item.user.avatar"
             />
             <div style="margin-left: 15px">
               <div class="comments-item-d1">{{ item.user.nickname }}</div>

@@ -7,7 +7,7 @@
           round
           width="60"
           height="60"
-          :src="base + '/file/image/' + user.avatar"
+          :src="'/api/file/image/' + user.avatar"
       />
       <div class="des">
         <div class="des-name">{{ user.nickname }}</div>
@@ -40,13 +40,11 @@
 </template>
 
 <script>
-import {BASE_RUL} from "@/utils/request";
 
 export default {
 
   data() {
     return {
-      base: BASE_RUL,
       user: JSON.parse(localStorage.getItem('user')),
     }
   },

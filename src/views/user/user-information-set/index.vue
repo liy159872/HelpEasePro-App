@@ -22,7 +22,7 @@
 <!--      <a href="http://localhost:8084/login">-->
 <!--      <van-cell title="高校专区" to="" value="HelpEasePro" isLink></van-cell>-->
 <!--      </a>-->
-      <a href="https://2h7838k921.zicp.fun/login">
+      <a href="http://lwglovezxm.vipgz1.91tunnel.com/login">
         <van-cell title="高校专区" to="" value="HelpEasePro" isLink></van-cell>
       </a>
     </van-cell-group>

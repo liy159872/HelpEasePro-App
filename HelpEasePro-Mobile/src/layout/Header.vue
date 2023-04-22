@@ -26,7 +26,7 @@
               round
               width="40"
               height="40"
-              :src="base + '/file/image/' + user.avatar"
+              :src="'/api/file/image/' + user.avatar"
           />
           <span style="padding-top: 10px;padding-left: 15px">你在 {{ user.createAt }} 来到了HelpEaseProApp</span>
         </div>

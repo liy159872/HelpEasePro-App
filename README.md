@@ -23,6 +23,7 @@
 4、请修改HelpEasePro-Mobile vue项目Me.vue中的数据请求路径为对应IP
 5、请修改HelpEasePro-App vue项目中user/tabbar-user-order.vue的数据请求路径为对应IP
 6、请修改HelpEasePro-App vue项目中user/user-information-set/index.vue的数据请求路径为对应IP
+7、请修改HelpEasePro-AdminApp vue项目中goods/create.vue的数据请求路径为对应IP
 
 同样的；如若只在本地运行；需要进行以下操作：
 1、请修改HelpEPAppApi Spring Boot后段对应yml配置文件中地址server.address为local host
@@ -31,6 +32,7 @@
 4、请修改HelpEasePro-Mobile vue项目Me.vue中的数据请求路径为local host
 5、请修改HelpEasePro-App vue项目中user/tabbar-user-order.vue的数据请求路径为local host
 6、请修改HelpEasePro-App vue项目中user/user-information-set/index.vue的数据请求路径为local host
+7、请修改HelpEasePro-AdminApp vue项目中goods/create.vue的数据请求路径为local host
 
 ### 项目配置
 

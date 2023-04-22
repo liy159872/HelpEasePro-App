@@ -2,12 +2,12 @@
   <div class="main">
     <div class="header">
       <img src="https://www.hualigs.cn/image/641fdd4dac243.jpg"  style="height: 60px;margin-bottom: -40px">
-      <div class="header-d1">领智行身份验证</div>
+      <div class="header-d1">领智行高校认证</div>
       <div class="header-d2">HelpEaseProApp</div>
     </div>
     <van-tabs style="width: 200px;padding-top: 30px;text-align: center;margin: auto" v-model="active">
-      <van-tab title="账号验证"/>
-      <van-tab title="账号注册"/>
+      <van-tab title="高校认证"/>
+<!--      <van-tab title="账号注册"/>-->
     </van-tabs>
     <div class="form" v-if="active === 0">
       <input placeholder="请输入手机" v-model="signInForm.phone" class="input"/>
@@ -71,7 +71,7 @@ export default {
           'Content-Type': 'multipart/form-data',
         }
       }
-      axios.post(BASE_RUL + "/file/image", formData, config).then((res) => {
+      axios.post("/api/file/image", formData, config).then((res) => {
         if (res.status === 200) this.signUpForm.avatar = res.data
       })
     },
@@ -82,7 +82,7 @@ export default {
           if (res.status) {
             localStorage.setItem("user", JSON.stringify(res.data))
             localStorage.setItem("uid", res.data.id)
-            this.$toast.success("验证成功")
+            this.$toast.success("认证成功")
             this.$router.push("/")
           }
         })

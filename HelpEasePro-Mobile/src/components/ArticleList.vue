@@ -13,7 +13,7 @@
                       round
                       width="20"
                       height="20"
-                      :src="base + '/file/image/' + item.author.avatar"
+                      :src="'/api/file/image/' + item.author.avatar"
                   />
                   <span class="author-name">{{ item.author.nickname }}</span>
                   <van-icon color="#06f" style="padding-left: 7px;" name="wechat-pay"/>
@@ -28,7 +28,7 @@
                     width="100px"
                     height="63px"
                     fit="contain"
-                    :src="base + '/file/image/' + item.article.poster"
+                    :src="'/api/file/image/' + item.article.poster"
                 />
               </div>
             </div>
@@ -51,7 +51,7 @@
                       round
                       width="20"
                       height="20"
-                      :src="base + '/file/image/' + item.author.avatar"
+                      :src="'/api/file/image/' + item.author.avatar"
                   />
                   <span class="author-name">{{ item.author.nickname }}</span>
                   <van-icon color="#06f" style="padding-left: 7px;" name="wechat-pay"/>
@@ -75,13 +75,11 @@
 </template>
 
 <script>
-import {BASE_RUL} from "@/utils/request";
 
 export default {
   name: "ArticleList",
   data() {
     return {
-      base: BASE_RUL
     }
   },
   props: {
@@ -123,7 +121,7 @@ export default {
 }
 
 .author-name {
-  width: 63px;
+  width: 70px;
   padding-left: 10px;
   font-size: 12px;
   letter-spacing: 1px;

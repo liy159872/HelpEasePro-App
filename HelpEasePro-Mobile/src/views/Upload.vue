@@ -138,7 +138,7 @@ export default {
           'Content-Type': 'multipart/form-data',
         }
       }
-      axios.post(BASE_RUL + "/file/video", formData, config).then((res) => {
+      axios.post("/api/file/video", formData, config).then((res) => {
         if (res.status === 200) this.videoForm.fid = res.data
       })
     },
@@ -152,7 +152,7 @@ export default {
           'Content-Type': 'multipart/form-data',
         }
       }
-      axios.post(BASE_RUL + "/file/image", formData, config).then((res) => {
+      axios.post("/api/file/image", formData, config).then((res) => {
         if (res.status === 200) {
           this.articleForm.hasPoster = true
           this.articleForm.poster = res.data
