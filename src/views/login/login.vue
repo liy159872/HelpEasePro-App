@@ -4,7 +4,7 @@
 		<div class="store_avatar">
 			<img src="../../assets/images/avatar_default.png" alt="头像" width="55" height="55">
 		</div>
-		<div class="store_name">HelpEasePro</div>
+		<div class="store_name">HelpEasePro~</div>
 	</div>
 
     <md-field-group>
@@ -46,7 +46,7 @@
     </div>
 
 
-      <div class="text-desc text-center bottom_positon">@HelpEasePro 关于我们 使用条款 帮助文档 在线自助服务 激活</div>
+      <div class="text-desc text-center bottom_positon">@HelpEasePro 领智行(互助) 李一 AND You</div>
 
 	</div>
 </template>
@@ -160,8 +160,10 @@ export default {
     border-radius: 50%;
   }
   .store_name {
-    padding-top: 5px;
-    font-size: 16px;
+    padding-top: 0px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #04aef1;
   }
 }
 .register {

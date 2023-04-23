@@ -1,7 +1,7 @@
 <template>
   <div class="tab_class">
     <div class="tal_class_searchBox">
-      <van-search placeholder="HelpEasePro-PC搜索"/>
+      <van-search placeholder="HelpEasePro搜索"/>
       <div class="tal_class_searchMask" @click="$router.push({ name: 'search' })"></div>
     </div>
 

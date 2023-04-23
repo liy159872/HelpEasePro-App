@@ -8,7 +8,7 @@
         @click-left="onClickLeft"
     >
       <template #right>
-        <van-button style="margin-top: 5px" color="#0066ff" round type="info" @click="submit" size="small">Submit
+        <van-button style="margin-top: 5px" color="#0066ff" round type="info" @click="submit" size="small">发布
         </van-button>
       </template>
     </van-nav-bar>
@@ -40,7 +40,7 @@
         </div>
         <!---->
 
-        <div class="footer" @click="show = true">+ 稿件类型（必须选择）
+        <div class="footer" @click="show = true">+ 求助类型（必须选择）
           <van-tag round
                    style="font-size: 10px;letter-spacing: 1px;margin-left: 10px"
                    v-if="tag"
