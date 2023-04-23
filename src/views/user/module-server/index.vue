@@ -14,7 +14,7 @@
         <van-cell title="项目地址" value="Gitee"  url="https://gitee.com/liyiaixuemei"/>
         <van-cell title="联系电话" value="14736856351" />
         <van-cell title="联系QQ" value="2080863176" />
-        <van-cell title="当前版本" value="V4.0.0" />
+        <van-cell title="当前版本" value="V04.1.0" />
         <van-cell title="开源协议" value="MIT" />
       </van-cell-group>
     </van-popup>
